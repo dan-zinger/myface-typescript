@@ -6,24 +6,29 @@
 <form method="post" action="/users/create">
     <label>
         Name:
-        <input type="text" name="name"/>
+        <input type="text" name="name" required/>
     </label>
+    <br/>
     <label>
         Username:
-        <input type="text" name="username"/>
+        <input type="text" name="username" required/>
     </label>
+    <br/>
     <label>
         Email:
-        <input type="text" name="email"/>
+        <input type="email" name="email" required/>
     </label>
+    <br/>
     <label>
         ProfileImageUrl:
-        <input type="text" name="profileImageUrl"/>
+        <input type="text" name="profileImageUrl" required/>
     </label>
+    <br/>
     <label>
         CoverImageUrl:
-        <input type="text" name="coverImageUrl"/>
+        <input type="text" name="coverImageUrl" required/>
     </label>
+    <br/>
     <button type="submit">Submit</button>
 </form>
 </body>

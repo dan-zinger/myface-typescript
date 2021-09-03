@@ -1,8 +1,89 @@
-<html lang="en-gb">
+<html lang="en-gb"></html>
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1><%= name %></h1>
+    <div class =" profile-header">
+        <img 
+            class = "cover-photo"
+            alt = <%= name %>'s cover photo
+            src="<%=coverImageUrl%>"
+        />
+        <div class = "profile-info">
+            <img
+                src="<%=profileImageUrl%>"
+                alt= "<%= name %>'s profile picture"
+            >
+            <div class = "profile-info-text">
+                <h1><%= name %></h1>
+                <p class="username"><%= username %></p>
+                <p class="email"><%= email %></p>
+            </div>
+        </div>
+    </div>
+
+
+<section id = "posts"> 
+    <h2><%= name %>'s Posts</h2>
+    <ul class = postlist>
+        <% posts.forEach(function(post) {%>
+            <li class = "eachpost">
+                <img 
+                    class="postimage"
+                    src= "<%= post.imageUrl %>" 
+                    alt="<%= post.message %>"
+                >
+                <p class = username>Posted by <%=post.postedBy%></p>
+                <p><%= post.message %></p>
+            </li>
+        <% }); %>
+        </ul>
+</section>
+
+<section id = "posts"> 
+    <h2>Posts Liked By <%= name %>s</h2>
+    <ul class = postlist>
+        <% likes.forEach(function(post) {%>
+            <li class = "eachpost">
+                <img 
+                    class="postimage"
+                    src= "<%= post.imageUrl %>" 
+                    alt="<%= post.message %>"
+                >
+                <p class = username></p>
+                <p><%= post.message %></p>
+            </li>
+        <% }); %>
+        </ul>
+</section>
+
+<section id = "posts"> 
+    <h2>Posts Disliked By <%= name %>s</h2>
+    <ul class = postlist>
+        <% dislikes.forEach(function(post) {%>
+            <li class = "eachpost">
+                <img 
+                    class="postimage"
+                    src= "<%= post.imageUrl %>" 
+                    alt="<%= post.message %>"
+                >
+                <p class = username></p>
+                <p><%= post.message %></p>
+            </li>
+        <% }); %>
+        </ul>
+</section>
+
+<button 
+id = "colorchange-button"
+type="button">
+Click here to change colour of posts!
+</button> 
+<button
+id = "change-background-color"
+type = button>
+Click here to change color of the background!
+</button>
+
 </body>
 <%- include('_footer') -%>
 </html>

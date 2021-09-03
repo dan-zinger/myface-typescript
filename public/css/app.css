@@ -1,1 +1,158 @@
-/* Add your styles here. */
+body {
+    background: #252A38;
+    font-family: Segoe UI;
+    color: DCDCDC;
+  }
+
+.profile-header {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.profile-header .cover-photo {
+    width: 100%;
+    max-width: 1024px;
+    height: 30vh;
+    display: block;
+    margin: 0 auto 80px;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+
+
+.profile-info img {
+    border-radius: 50%;
+}
+
+.userinfo {
+    width: 70%;
+    background-color: #252A38 0.56;
+    display: block;
+    margin: 0 auto;
+    height: 10vh;
+    position: absolute;
+}
+
+.postlist {
+    list-style-type:none;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.eachpost {
+    padding: 24px;
+    width: 309.333px;
+
+}
+
+.eachpost p {
+    background-color: #151820;
+    margin: 0;
+    padding: 1rem;
+    height: 50px;
+}
+
+.postimage {
+    width: 309.333px;
+    height: 309.333px;
+}
+
+
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: 60px;
+    background-color: #151820;
+    
+}
+
+.header-nav .non-hamburger-nav-bar {
+    display: flex;
+    justify-content: space-around;
+    width: 1024px;
+    height: 60px;
+    align-items: center;
+}
+
+.header-nav .non-hamburger-nav-bar .nav1{
+    display: flex;
+    justify-content: flex-start;
+    width: calc((1024px - 20vw) / 2);
+    max-width: 30vw;
+    height: 60px;
+    align-items: center;
+}
+.header-nav .non-hamburger-nav-bar .nav2{
+    display: flex;
+    justify-content: space-between;
+    width: 20vw;
+    min-width: 300px;
+    height: 60px;
+    align-items: center;
+}
+
+.header-nav .non-hamburger-nav-bar .nav3{
+    display: flex;
+    justify-content: flex-end;
+    width: calc((1024px - 20vw) / 2);
+    max-width: 30vw;
+    height: 60px;
+    align-items: center;
+}
+
+
+
+nav a{
+    color: DCDCDC;
+    text-decoration: none;
+    line-height: 40px;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+h2 {
+    max-width: 1024px;
+    display: block;
+    margin: 0 auto;
+}
+
+.profile-info {
+    position: absolute;
+    background-color: rgba(37, 42, 52, 0.56);
+    top: 300px;
+    left: 70px;
+    width: calc( min(100%, 1024px) - 70px );
+}
+
+.profile-info img {
+    width: 100px;
+    height: 100 px;
+}
+
+.profile-info-text {
+    position: absolute;
+    left: 130;
+    top: -20;
+}
+
+.post-profile-image {
+    height: 10px;
+}
+
+.post-card {
+    background-color: #151820;
+}
+
+.likes-and-dislikes {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 0 auto;
+}
