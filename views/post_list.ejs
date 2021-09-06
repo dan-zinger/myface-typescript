@@ -3,7 +3,7 @@
 <%- include('_header') -%>
 
 <body>
-<h1>Posts</h1>
+<h2>Posts</h2>
 
 <section id = "posts"> 
     <ul class = postlist>
@@ -22,66 +22,41 @@
                             style="font-size:25px;"> 
                             <img 
                                 src = "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/thumbs-up.png" 
-                                width ="20"> : 
+                                width ="20"> : <%= post.likedBy.length %>
                         </a> 
+
+
                         <a 
                             title = "<% post.dislikedBy.forEach(function(dislike) {%> <%= dislike.name %>&#10;<% }); %>" 
                             style="font-size:25px;"> 
                             <img 
                                 src = "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/thumbs-down.png" 
-                                width ="20">: 
+                                width ="20">: <%= post.dislikedBy.length %>
                         </a>
+                        
                     </div>
                     <div  class= "likes-and-dislikes">
-                        <%= post.likedBy.length %>
-                    
-                        <%= post.dislikedBy.length %> 
+                        <div>
+                            <form 
+                            method="post" 
+                            action = "/posts/<%= post.id %>/like">
+                            <button type="submit">Like</button>
+                        </div>
+                        <div>
+                            </form>
+                            <form method="post" action = "/posts/<%= post.id %>/dislike">
+                            <button type="submit">Dislike</button>
+                            </form>
+                        </div>
+
                     </div>
-                    <form method="post" action = "/posts/<%= post.id %>/like">
-                    <button type="submit">Like</button>
-                    </form>
-                    <form method="post" action = "/posts/<%= post.id %>/dislike">
-                    <button type="submit">Dislike</button>
-                    </form>
                 </div>
             </li>
         <% }); %>
         </ul>
 </section>
 
-<% results.forEach(function(post) {%>
-    <div>
-        Posted by <%= post.postedBy.name %>
-        <img src ="<%= post.postedBy.profileImageUrl %>" alt = "Profile Picture">
-        <%= post.createdAt %>
-    </div>
-        
 
-        <%= post.message %>
-        
-        
-
-        <img src= "<%= post.imageUrl %>" alt="<%= post.message %>">
-        
-       
-        <a title = "<% post.likedBy.forEach(function(like) {%> <%= like.name %>&#10;<% }); %>" style="font-size:25px;"> 
-            <img src = "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/thumbs-up.png" width ="20"> : 
-        </a> <%= post.likedBy.length %>
-
-        <a title = "<% post.dislikedBy.forEach(function(dislike) {%> <%= dislike.name %>&#10;<% }); %>" style="font-size:25px;"> 
-            <img src = "http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/thumbs-down.png" width ="20">: 
-        </a>
-
-            <%= post.dislikedBy.length %> 
-        <form method="post" action = "/posts/<%= post.id %>/like">
-            <button type="submit">Like</button>
-            </form>
-        <form method="post" action = "/posts/<%= post.id %>/dislike">
-            <button type="submit">Dislike</button>
-            </form>
-        <hr>
-    </div>
-<% }); %>
 <%if (previous) { %>
     <a href="<%= previous %>">Previous</a>
 <% } %>

@@ -49,8 +49,8 @@
                     src= "<%= post.imageUrl %>" 
                     alt="<%= post.message %>"
                 >
-                <p class = username></p>
-                <p><%= post.message %></p>
+                <p class = "username"></p>
+                <p class = "post-message"><%= post.message %></p>
             </li>
         <% }); %>
         </ul>
@@ -62,7 +62,6 @@
         <% dislikes.forEach(function(post) {%>
             <li class = "eachpost">
                 <img 
-                    class="postimage"
                     src= "<%= post.imageUrl %>" 
                     alt="<%= post.message %>"
                 >
